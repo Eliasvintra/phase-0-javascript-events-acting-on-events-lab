@@ -20,9 +20,13 @@ function moveDodgerRight() {
     const leftNumbers = dodger.style.left.replace('px', '');
     const left = parseInt(leftNumbers, 10);
 
+    const containerWidth = document.getElementById('game').offsetWidth;
 
-    if (left > 0) {
-        dodger.style.left = `${left + 1}px`;
+    const dodgerWidth = dodger.offsetWidth;
+
+
+    if (left < containerWidth - dodgerWidth) {
+    dodger.style.left = `${left + 1}px`;
     }
 }
 document.addEventListener('keydown', function(event) {
